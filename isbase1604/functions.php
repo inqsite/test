@@ -150,7 +150,3 @@ function catch_that_image() {
     return $first_img;
 }
 
-function my_category_children( $return ) {
-  return array();
-}
-add_filter( 'pre_option_category_children', 'my_category_children' );

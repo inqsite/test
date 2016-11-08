@@ -1,5 +1,5 @@
 /*
-Theme Name: isbase1604
+Theme Name: isbase
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -1030,23 +1030,20 @@ mark, ins{
 .entry-content blockquote *:last-child {
   margin-bottom: 0;
 }
+main h2{
+  margin-top:0;
+  margin-bottom:0.5em;
+}
+main p{
+  margin-block-end: 0;
+  margin-block-start: 0;
+  margin-bottom:1em;
+}
 main ul{
   margin-left:0;
   padding-left:1.5em;
 }
-/*--------------------------------------------------------------
-## common
---------------------------------------------------------------*/
-.dl7em dt {
- float: left;
- padding: 5px 0;
- width: 7em;
-}
- 
-.dl7em dd {
- border-bottom: 1px dotted #ccc;
- padding: 5px 0 5px 7em;
-}
+
 /*--------------------------------------------------------------
 ## media screen and (max-width: 740px)
 --------------------------------------------------------------*/
