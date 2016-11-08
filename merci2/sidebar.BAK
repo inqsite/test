@@ -1,0 +1,103 @@
+<?php
+/**
+ * The Sidebar containing the primary and secondary widget areas.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Ten
+ * @since Twenty Ten 1.0
+ */
+?>
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<li>
+					<a href="http://daigoso.hamazo.tv/"><img src="<?php bloginfo('template_directory'); ?>/images/staffblog.png" width="230" height="61" alt="スタッフブログ"></a>
+				</li>
+				<li>
+					<h3></h3><a href="<?php bloginfo('url'); ?>/news/"><img src="<?php bloginfo('template_directory'); ?>/images/news.png" width="230" height="61" alt="お知らせ"></a>
+								<?php
+								/* Run the loop to output the posts.
+								 * If you want to overload this in a child theme then include a file
+								 * called loop-index.php and that will be used instead.
+								 */
+								 get_template_part( 'loop', 'news' );
+								?>
+				</li>
+				<li>
+					<a href="<?php bloginfo('url'); ?>/event/"><img src="<?php bloginfo('template_directory'); ?>/images/event.png" width="230" height="61" alt="イベント"></a>
+				</li>
+				<li>
+					<a href="<?php bloginfo('url'); ?>/price/"><img src="<?php bloginfo('template_directory'); ?>/images/price.png" width="230" height="61" alt="料金"></a>
+				</li>
+				<li>
+					<a href="<?php bloginfo('url'); ?>/faq/"><img src="<?php bloginfo('template_directory'); ?>/images/faq.png" width="230" height="61" alt="よくある質問"></a>
+				</li>
+				<li class="side-contact-li">
+					<h3><a href="<?php bloginfo('url'); ?>/contact/"><img src="<?php bloginfo('template_directory'); ?>/images/side-contact-title.png" width="230" height="59" alt="お問い合わせ"></a></h3>
+					<div class="side-contact">
+						<img src="<?php bloginfo('template_directory'); ?>/images/daigoso-photo.jpg" width="194" height="130" alt="">
+						<img src="<?php bloginfo('template_directory'); ?>/images/side-daigoso.gif" width="51" height="17" alt="醍醐荘"><br />
+						
+						〒438-0054<br />
+静岡県磐田市浜部155<br />
+(国道150号線沿い)<br />
+※無料大駐車場完備(200台)<br />
+<img src="<?php bloginfo('template_directory'); ?>/images/side-tel.gif" width="180" height="18" alt="0538-35-5225">
+<iframe width="194" height="130" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.jp/maps?hl=ja&amp;q=%E9%86%8D%E9%86%90%E8%8D%98&amp;ie=UTF8&amp;hq=%E9%86%8D%E9%86%90%E8%8D%98&amp;t=m&amp;brcurrent=3,0x601ae3dd9d48070d:0x4bd9167b2e1200ef,0&amp;ll=34.677264,137.851639&amp;spn=0.004588,0.008283&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.co.jp/maps?hl=ja&amp;q=%E9%86%8D%E9%86%90%E8%8D%98&amp;ie=UTF8&amp;hq=%E9%86%8D%E9%86%90%E8%8D%98&amp;t=m&amp;brcurrent=3,0x601ae3dd9d48070d:0x4bd9167b2e1200ef,0&amp;ll=34.677264,137.851639&amp;spn=0.004588,0.008283&amp;z=15&amp;iwloc=A&amp;source=embed" style="color:#0000FF;text-align:left">大きな地図で見る</a></small>
+					</div>
+				</li>
+				<li>
+					<a href="http://happypro.hamazo.tv/"><img src="<?php bloginfo('template_directory'); ?>/images/happyproject-blog.gif" width="228" height="101" alt="ハッピープロジェクトスタッフブログ"></a>
+				</li>
+								<li>
+					<a href="http://happypro.tv/"><img src="<?php bloginfo('template_directory'); ?>/images/happyproject.gif" width="228" height="139" alt="ハッピープロジェクト：静岡県西部の合コン・婚活情報専用サイト"></a>
+				</li>
+								<li>
+					<a href="http://www.iwacon.jp/"><img src="<?php bloginfo('template_directory'); ?>/images/iwatacon.gif" width="228" height="97" alt="磐コン公式ホームページはこちら"></a>
+				</li>
+								<li>
+					<a href="<?php bloginfo('url'); ?>/link/"><img src="<?php bloginfo('template_directory'); ?>/images/link.png" width="230" height="61" alt="リンク集"></a>
+				</li>
+<?php
+	/* When we call the dynamic_sidebar() function, it'll spit out
+	 * the widgets for that widget area. If it instead returns false,
+	 * then the sidebar simply doesn't exist, so we'll hard-code in
+	 * some default sidebar stuff just in case.
+	 */
+	if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
+<!--
+			<li id="search" class="widget-container widget_search">
+				<?php get_search_form(); ?>
+			</li>
+
+			<li id="archives" class="widget-container">
+				<h3 class="widget-title"><?php _e( 'Archives', 'twentyten' ); ?></h3>
+				<ul>
+					<?php wp_get_archives( 'type=monthly' ); ?>
+				</ul>
+			</li>
+
+			<li id="meta" class="widget-container">
+				<h3 class="widget-title"><?php _e( 'Meta', 'twentyten' ); ?></h3>
+				<ul>
+					<?php wp_register(); ?>
+					<li><?php wp_loginout(); ?></li>
+					<?php wp_meta(); ?>
+				</ul>
+			</li>
+-->
+		<?php endif; // end primary widget area ?>
+			</ul>
+		</div><!-- #primary .widget-area -->
+
+<?php
+	// A second sidebar for widgets, just because.
+	if ( is_active_sidebar( 'secondary-widget-area' ) ) : ?>
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
+			</ul>
+		</div><!-- #secondary .widget-area -->
+
+<?php endif; ?>
