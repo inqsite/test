@@ -23,6 +23,18 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<!-- SlickNav用のスタイル -->
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/slicknav.css">
+<!-- SlickNavのスクリプトファイル -->
+<script src="<?php bloginfo('template_url'); ?>/js/jquery.slicknav.min.js"></script>
+<script>
+//グローバルナビのCSSセレクタを指定する
+jQuery(function(){
+  jQuery('.menu-mainmenu-container > ul').slicknav({
+label: '',
+    prependTo: "#sm",
+  });
+});
+</script>
 </body>
 </html>
