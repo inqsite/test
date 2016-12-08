@@ -971,41 +971,24 @@ textarea {
   font-size: 1.6rem;
 }
 
-#sm {
-  display: none;
-}
-
-
-/*--------------------------------------------------------------
-## media screen and (max-width: 740px)
---------------------------------------------------------------*/
-
-@media screen and (max-width: 740px) {
   #site-navigation {
     display: none;
   }
   #sm {
     display: block;
   }
-  #page {
-    width: 100%;
+
+
+/*--------------------------------------------------------------
+## media screen and (min-width: 740px)
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 740px) {
+  #site-navigation {
+    display: block;
   }
-  .site-title {
-    width: 100%;
+  #sm {
+    display: none;
   }
-  .content-area {
-    float: none;
-    margin: 0;
-  }
-  .site-main {
-    margin: 0 3%;
-  }
-  .site-content .widget-area {
-    float: none;
-    overflow: hidden;
-    width: 100%;
-  }
-  .textwidget {
-    margin-right: 3%;
-  }
+
 }
