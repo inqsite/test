@@ -106,8 +106,11 @@ function isbase_scripts() {
   
 	wp_enqueue_style( 'isbase-style', get_stylesheet_uri() );
   
-    wp_deregister_script('jquery');
-    wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js', array(), '1.6.1');
+// WordPress本体のjquery.jsを読み込まない
+wp_deregister_script('jquery');
+// jQueryの読み込み
+wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', "", "20160608", false );
+    wp_enqueue_script( 'flexibility', get_template_directory_uri() . '/js/flexibility.js', "", '20151215', false );
 
 	wp_enqueue_script( 'isbase-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

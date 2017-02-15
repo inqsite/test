@@ -24,9 +24,9 @@
 
 <?php wp_footer(); ?>
 <!-- SlickNav用のスタイル -->
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/slicknav.css">
+<link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/slicknav.css">
 <!-- SlickNavのスクリプトファイル -->
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.slicknav.min.js"></script>
+<script src="<?php get_template_directory_uri(); ?>/js/jquery.slicknav.min.js"></script>
 <script>
 //グローバルナビのCSSセレクタを指定する
 jQuery(function(){
